@@ -7,7 +7,7 @@
 //Java program that emulates an ATM. The program will allow the users to deposit money, withdraw and check their balance.
 //
 import java.util.Scanner;
-public class Main {
+public class A3_Q1 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
