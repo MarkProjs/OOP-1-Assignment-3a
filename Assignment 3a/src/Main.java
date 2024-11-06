@@ -14,7 +14,7 @@ public class Main {
 		Atm atm = new Atm();
 		System.out.println("Welcome to the Best Bank ATM");
 		boolean exitProgram = false;
-		do {
+		while (exitProgram != true) {
 			System.out.println("------------------------------");
 			System.out.println("Please choose an option: ");
 			System.out.println("\t"+ "1. Check Balance");
@@ -23,31 +23,26 @@ public class Main {
 			System.out.println("\t"+ "1. Exit");
 			System.out.print("Enter your choice: ");
 			int userChoice = input.nextInt();
-			switch (userChoice) {
-				case 1:
-					atm.checkBalance();
-					break;
-				case 2:
-					System.out.print("Enter amount to deposit: ");
-					int deposit = input.nextInt();
-					atm.deposit(deposit);
-					break;
-				case 3:
-					System.out.print("Enter amount to withdraw(multiples of 5, 10, 50, or 100): ");
-					int withdraw = input.nextInt();
-					atm.withdraw(withdraw);
-					break;
-				case 4:
-					System.out.println("Goodbye!");
-					exitProgram = true;
-					break;
-				default:
-					System.out.println("Invalid choice! Please try again.");
-					break;
+			if (userChoice == 1){
+				atm.checkBalance();
+			} else if (userChoice == 2) {
+				System.out.print("Enter amount to deposit: ");
+				int deposit = input.nextInt();
+				atm.deposit(deposit);
+			} else if(userChoice == 3) {
+				System.out.print("Enter amount to withdraw(multiples of 5, 10, 50, or 100): ");
+				int withdraw = input.nextInt();
+				System.out.println(atm.withdraw(withdraw));
+			}
+			else if (userChoice==4) {
+				System.out.println("Goodbye!");
+				exitProgram = true;
+			} else {
+				System.out.println("Invalid choice! Please try again.");
 			}
 			System.out.println();
-		} while (exitProgram);
-		
+		}
+		input.close();
 	}
 
 }

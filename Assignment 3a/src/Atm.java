@@ -6,7 +6,7 @@ public class Atm {
     }
 
     public void checkBalance() {
-        System.out.println("Your balance is: "+ this.totalAmount);
+        System.out.println("Your balance is: $"+ String.format("%.2f", this.totalAmount));
     }
 
     public void deposit(int amountDeposit) {
@@ -37,9 +37,9 @@ public class Atm {
                     bills += "\t"+ (amountWithdraw /5)+" bill(s) of $5"+"\n";
                     amountWithdraw %=5;
                 }
-            }     
+            }
+            bills += "Withdrawal successful!";    
         }
         return bills;
-
     }
 }
